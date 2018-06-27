@@ -45,4 +45,9 @@ public class AtorJogador {
 	public String getNomeJogadorAdversario(int posicao) {
 		return rede.getNomeJogadorAdversario(posicao);
 	}
+
+	public void posicionarPecasNaInterface() {
+		interfaceTabuleiro.posicionarPecasNaInterface();
+		
+	}
 }

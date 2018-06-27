@@ -6,11 +6,10 @@ public class Posicao {
 	protected int linha, coluna;
 	protected Peca pecaOcupante;
 	
-	public Posicao(boolean ocupado, int linha, int coluna , Peca pecaOcupante) {
+	public Posicao(boolean ocupado, int linha, int coluna) {
 		this.ocupado=ocupado;
 		this.linha=linha;
 		this.coluna=coluna;
-		this.pecaOcupante=pecaOcupante;
 	}
 	public boolean isOcupado() {
 		return ocupado;
