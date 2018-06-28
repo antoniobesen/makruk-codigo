@@ -52,7 +52,17 @@ public class AtorJogador {
 	}
 
 	public void clickTabuleiro(int i, int j) {
-		// TODO Auto-generated method stub
+		tabuleiro.clickTabuleiro(i,j);
+		
+	}
+
+	public void mostraMensagem(String string) {
+		interfaceTabuleiro.mostraMensagem(string);
+		
+	}
+
+	public void atualizaTabuleiroMovimentoSimples(int i1, int j1, int i2,int j2) {
+		interfaceTabuleiro.atualizaTabuleiroMovimentoSimples(i1,j1,i2,j2);
 		
 	}
 }

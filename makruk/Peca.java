@@ -2,7 +2,7 @@ package makruk;
 
 public class Peca {
 	
-	protected boolean capturada, donoLocal;
+	protected boolean capturada, donoLocal, preta;
 	protected Posicao posicao;
 	protected int tipo;
 	/*
@@ -17,11 +17,12 @@ public class Peca {
 	 */
 	
 	
-	public Peca(boolean donoLocal, Posicao posicao, int tipo) {
+	public Peca(boolean donoLocal, Posicao posicao, int tipo, boolean preta) {
 		this.donoLocal=donoLocal;
 		this.posicao=posicao;
 		this.tipo=tipo;
 		this.capturada=false;
+		this.preta = preta;
 	}
 
 
@@ -62,6 +63,16 @@ public class Peca {
 
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
+	}
+
+
+	public boolean podeMover(Posicao pos) {
+		if(this.tipo == 0 && preta == true) {
+			if((pos.getLinha() == posicao.getLinha()+1) && pos.getColuna()==posicao.getColuna())
+				return true;
+			
+		}
+		return false;
 	}
 
 }

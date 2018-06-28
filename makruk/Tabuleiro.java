@@ -43,77 +43,77 @@ public class Tabuleiro {
 				if(i==0 && (j==2 || j==5)) { //bispos pretos
 					if(posicao==1) {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(false, posicoes[i][j], 3);
+						Peca peca = new Peca(false, posicoes[i][j], 3, true);
 						posicoes[i][j].setPecaOcupante(peca);
 					} else {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(true, posicoes[i][j], 3);
+						Peca peca = new Peca(true, posicoes[i][j], 3, true);
 						posicoes[i][j].setPecaOcupante(peca);
 				}
 				}
 				if(i==7 && (j==2 || j==5)) { //bispos brancos
 					if(posicao==1) {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(true, posicoes[i][j], 3);
+						Peca peca = new Peca(true, posicoes[i][j], 3, false);
 						posicoes[i][j].setPecaOcupante(peca);
 					} else {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(false, posicoes[i][j], 3);
+						Peca peca = new Peca(false, posicoes[i][j], 3, false);
 						posicoes[i][j].setPecaOcupante(peca);
 				}
 				}
 				if(i==0 && (j==1 || j==6)) { //cavalos pretos
 					if(posicao==1) {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(false, posicoes[i][j], 2);
+						Peca peca = new Peca(false, posicoes[i][j], 2, true);
 						posicoes[i][j].setPecaOcupante(peca);
 					} else {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(true, posicoes[i][j], 2);
+						Peca peca = new Peca(true, posicoes[i][j], 2, true);
 						posicoes[i][j].setPecaOcupante(peca);
 				}
 				}
 				if(i==7 && (j==1 || j==6)) { //cavalos brancos
 					if(posicao==1) {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(true, posicoes[i][j], 2);
+						Peca peca = new Peca(true, posicoes[i][j], 2, false);
 						posicoes[i][j].setPecaOcupante(peca);
 					} else {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(false, posicoes[i][j], 2);
+						Peca peca = new Peca(false, posicoes[i][j], 2, false);
 						posicoes[i][j].setPecaOcupante(peca);
 				}
 				}
 				if(i==0 && (j==0 || j==7)) { //torres pretas
 					if(posicao==1) {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(false, posicoes[i][j], 1);
+						Peca peca = new Peca(false, posicoes[i][j], 1, true);
 						posicoes[i][j].setPecaOcupante(peca);
 					} else {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(true, posicoes[i][j], 1);
+						Peca peca = new Peca(true, posicoes[i][j], 1, true);
 						posicoes[i][j].setPecaOcupante(peca);
 				}
 				}
 				if(i==7 && (j==0 || j==7)) { //torres brancas
 					if(posicao==1) {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(true, posicoes[i][j], 1);
+						Peca peca = new Peca(true, posicoes[i][j], 1, false);
 						posicoes[i][j].setPecaOcupante(peca);
 					} else {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(false, posicoes[i][j], 1);
+						Peca peca = new Peca(false, posicoes[i][j], 1, false);
 						posicoes[i][j].setPecaOcupante(peca);
 				}
 				}
 				if(i==2) { //peoes pretos
 					if(posicao==1) {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(false, posicoes[i][j], 0);
+						Peca peca = new Peca(false, posicoes[i][j], 0, true);
 						posicoes[i][j].setPecaOcupante(peca);
 					} else {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(true, posicoes[i][j], 0);
+						Peca peca = new Peca(true, posicoes[i][j], 0, true);
 						posicoes[i][j].setPecaOcupante(peca);
 					}
 				}
@@ -121,11 +121,11 @@ public class Tabuleiro {
 				if(i==5) { //peoes brancos
 					if(posicao==1) {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(true, posicoes[i][j], 0);
+						Peca peca = new Peca(true, posicoes[i][j], 0, false);
 						posicoes[i][j].setPecaOcupante(peca);
 					} else {
 						posicoes[i][j] = new Posicao(true, i,j);
-						Peca peca = new Peca(false, posicoes[i][j], 0);
+						Peca peca = new Peca(false, posicoes[i][j], 0, false);
 						posicoes[i][j].setPecaOcupante(peca);
 					}
 				}
@@ -133,33 +133,33 @@ public class Tabuleiro {
 		//rei e rainha pretos
 		if(posicao==1) {
 			posicoes[0][3] = new Posicao(true, 0,3);
-			Peca peca = new Peca(false, posicoes[0][3], 4);
+			Peca peca = new Peca(false, posicoes[0][3], 4, true);
 			posicoes[0][3].setPecaOcupante(peca);
 			posicoes[0][4] = new Posicao(true, 0,4);
-			Peca peca1 = new Peca(false, posicoes[0][4], 5);
+			Peca peca1 = new Peca(false, posicoes[0][4], 5, true);
 			posicoes[0][4].setPecaOcupante(peca1);
 		} else {
 			posicoes[0][3] = new Posicao(true, 0,3);
-			Peca peca = new Peca(true, posicoes[0][3], 4);
+			Peca peca = new Peca(true, posicoes[0][3], 4, true);
 			posicoes[0][3].setPecaOcupante(peca);
 			posicoes[0][4] = new Posicao(true, 0,4);
-			Peca peca1 = new Peca(true, posicoes[0][4], 5);
+			Peca peca1 = new Peca(true, posicoes[0][4], 5, true);
 			posicoes[0][4].setPecaOcupante(peca1);
 	}
 		//rei e rainha brancos
 				if(posicao==1) {
 					posicoes[7][3] = new Posicao(true, 7,3);
-					Peca peca = new Peca(true, posicoes[7][3], 5);
+					Peca peca = new Peca(true, posicoes[7][3], 5, false);
 					posicoes[7][3].setPecaOcupante(peca);
 					posicoes[7][4] = new Posicao(true, 7,4);
-					Peca peca1 = new Peca(true, posicoes[7][4], 4);
+					Peca peca1 = new Peca(true, posicoes[7][4], 4, false);
 					posicoes[7][4].setPecaOcupante(peca1);
 				} else {
 					posicoes[7][3] = new Posicao(true, 7,3);
-					Peca peca = new Peca(false, posicoes[7][3], 5);
+					Peca peca = new Peca(false, posicoes[7][3], 5, false);
 					posicoes[7][3].setPecaOcupante(peca);
 					posicoes[7][4] = new Posicao(true, 7,4);
-					Peca peca1 = new Peca(false, posicoes[7][4], 4);
+					Peca peca1 = new Peca(false, posicoes[7][4], 4, false);
 					posicoes[7][4].setPecaOcupante(peca1);
 			}
 		//criando posicoes sem pecas	
@@ -171,7 +171,37 @@ public class Tabuleiro {
 			}
 		
 	atorJogador.posicionarPecasNaInterface();
+	atorJogador.mostraMensagem("Você joga em "+posicao);
 
+	}
+
+	public void clickTabuleiro(int i, int j) {
+		if(!jogador1.isJogadorDaVez())
+			atorJogador.mostraMensagem("Aguarde sua vez");
+		else {
+			if(primeiroClick) {
+				if(!posicoes[i][j].isOcupado()) {
+					atorJogador.mostraMensagem("Clique numa peca");
+				}
+				else {
+					if(posicoes[i][j].getPecaOcupante().isDonoLocal()) {
+						this.pecaPrimeiroClick = posicoes[i][j].getPecaOcupante();
+						setPrimeiroClick(false);
+					} else {
+						atorJogador.mostraMensagem("Clique numa peca sua");
+					}
+				}
+			} else {
+				boolean podeMover = pecaPrimeiroClick.podeMover(posicoes[i][j]);
+				if(podeMover)
+					atorJogador.atualizaTabuleiroMovimentoSimples(pecaPrimeiroClick.getPosicao().getLinha(),pecaPrimeiroClick.getPosicao().getColuna(),i ,j);
+			}
+		}
+		
+	}
+	
+	public void setPrimeiroClick(boolean primeiro) {
+		this.primeiroClick=primeiro;
 	}
 	
 	

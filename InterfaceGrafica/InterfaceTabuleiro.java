@@ -865,7 +865,12 @@ public class InterfaceTabuleiro extends JFrame {
 	}
 	
 	public void clickTabuleiro(int i , int j) {
-		//atorJogador.clickTabuleiro(i,j);
-		JOptionPane.showMessageDialog(contentPane, ""+i+""+j);
+		atorJogador.clickTabuleiro(i,j);
+	}
+
+	public void atualizaTabuleiroMovimentoSimples(int i1, int j1, int i2, int j2) {
+		ImageIcon
+
+		
 	}
 }
