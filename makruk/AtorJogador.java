@@ -50,4 +50,9 @@ public class AtorJogador {
 		interfaceTabuleiro.posicionarPecasNaInterface();
 		
 	}
+
+	public void clickTabuleiro(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
 }
