@@ -30,6 +30,7 @@ public class InterfaceTabuleiro extends JFrame {
 
 	private JPanel contentPane;
 	private AtorJogador atorJogador;
+	private JLabel[][] vPosicoes = new JLabel[8][8];
 
 	private JLabel vPosicao11 = null;
 	private JLabel vPosicao12 = null;
@@ -171,6 +172,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(0,0);
 			}
 		});
+		vPosicoes[0][0] = vPosicao11;
 		contentPane.add(vPosicao11);
 		
 		vPosicao21 = new JLabel();
@@ -181,6 +183,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(1,0);
 			}
 		});
+		vPosicoes[1][0] = vPosicao21;
 		contentPane.add(vPosicao21);
 		
 		vPosicao31 = new JLabel();
@@ -191,6 +194,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(2,0);
 			}
 		});
+		vPosicoes[2][0] = vPosicao31;
 		contentPane.add(vPosicao31);
 		
 		vPosicao41 = new JLabel();
@@ -201,6 +205,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(3,0);
 			}
 		});
+		vPosicoes[3][0] = vPosicao41;
 		contentPane.add(vPosicao41);
 		
 		vPosicao51 = new JLabel();
@@ -211,6 +216,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(4,0);
 			}
 		});
+		vPosicoes[4][0] = vPosicao51;
 		contentPane.add(vPosicao51);
 		
 		vPosicao61 = new JLabel();
@@ -221,6 +227,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(5,0);
 			}
 		});
+		vPosicoes[5][0] = vPosicao61;
 		contentPane.add(vPosicao61);
 		
 		vPosicao71 = new JLabel();
@@ -231,6 +238,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(6,0);
 			}
 		});
+		vPosicoes[6][0] = vPosicao71;
 		contentPane.add(vPosicao71);
 		
 		vPosicao81 = new JLabel();
@@ -241,6 +249,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(7,0);
 			}
 		});
+		vPosicoes[7][0] = vPosicao81;
 		contentPane.add(vPosicao81);
 		
 		vPosicao12 = new JLabel();
@@ -251,6 +260,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(0,1);
 			}
 		});
+		vPosicoes[0][1] = vPosicao12;
 		contentPane.add(vPosicao12);
 		
 		vPosicao22 = new JLabel();
@@ -261,6 +271,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(1,1);
 			}
 		});
+		vPosicoes[1][1] = vPosicao22;
 		contentPane.add(vPosicao22);
 		
 		vPosicao32 = new JLabel();
@@ -271,6 +282,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(2,1);
 			}
 		});
+		vPosicoes[2][1] = vPosicao32;
 		contentPane.add(vPosicao32);
 		
 		vPosicao42 = new JLabel();
@@ -281,6 +293,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(3,1);
 			}
 		});
+		vPosicoes[3][1] = vPosicao42;
 		contentPane.add(vPosicao42);
 		
 		vPosicao52 = new JLabel();
@@ -291,6 +304,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(4,1);
 			}
 		});
+		vPosicoes[4][1] = vPosicao52;
 		contentPane.add(vPosicao52);
 		
 		vPosicao62 = new JLabel();
@@ -301,6 +315,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(5,1);
 			}
 		});
+		vPosicoes[5][1] = vPosicao62;
 		contentPane.add(vPosicao62);
 		
 		vPosicao72 = new JLabel();
@@ -311,6 +326,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(6,1);
 			}
 		});
+		vPosicoes[6][1] = vPosicao72;
 		contentPane.add(vPosicao72);
 		
 		vPosicao82 = new JLabel();
@@ -321,6 +337,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(7,1);
 			}
 		});
+		vPosicoes[7][1] = vPosicao82;
 		contentPane.add(vPosicao82);
 		
 		vPosicao13 = new JLabel();
@@ -331,6 +348,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(0,2);
 			}
 		});
+		vPosicoes[0][2] = vPosicao13;
 		contentPane.add(vPosicao13);
 		
 		vPosicao23 = new JLabel();
@@ -341,6 +359,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(1,2);
 			}
 		});
+		vPosicoes[1][2] = vPosicao23;
 		contentPane.add(vPosicao23);
 		
 		vPosicao33 = new JLabel();
@@ -351,6 +370,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(2,2);
 			}
 		});
+		vPosicoes[2][2] = vPosicao33;
 		contentPane.add(vPosicao33);
 		
 		vPosicao43 = new JLabel();
@@ -361,6 +381,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(3,2);
 			}
 		});
+		vPosicoes[3][2] = vPosicao43;
 		contentPane.add(vPosicao43);
 		
 		vPosicao53 = new JLabel();
@@ -371,6 +392,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(4,2);
 			}
 		});
+		vPosicoes[4][2] = vPosicao53;
 		contentPane.add(vPosicao53);
 		
 		vPosicao63 = new JLabel();
@@ -381,6 +403,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(5,2);
 			}
 		});
+		vPosicoes[5][2] = vPosicao63;
 		contentPane.add(vPosicao63);
 		
 		vPosicao73 = new JLabel();
@@ -391,6 +414,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(6,2);
 			}
 		});
+		vPosicoes[6][2] = vPosicao73;
 		contentPane.add(vPosicao73);
 		
 		vPosicao83 = new JLabel();
@@ -401,6 +425,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(7,2);
 			}
 		});
+		vPosicoes[7][2] = vPosicao83;
 		contentPane.add(vPosicao83);
 		
 		vPosicao14 = new JLabel();
@@ -411,6 +436,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(0,3);
 			}
 		});
+		vPosicoes[0][3] = vPosicao14;
 		contentPane.add(vPosicao14);
 		
 		vPosicao24 = new JLabel();
@@ -421,6 +447,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(1,3);
 			}
 		});
+		vPosicoes[1][3] = vPosicao24;
 		contentPane.add(vPosicao24);
 		
 		vPosicao34 = new JLabel();
@@ -431,6 +458,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(2,3);
 			}
 		});
+		vPosicoes[2][3] = vPosicao34;
 		contentPane.add(vPosicao34);
 		
 		vPosicao44 = new JLabel();
@@ -441,6 +469,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(3,3);
 			}
 		});
+		vPosicoes[3][3] = vPosicao44;
 		contentPane.add(vPosicao44);
 		
 		vPosicao54 = new JLabel();
@@ -451,6 +480,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(4,3);
 			}
 		});
+		vPosicoes[4][3] = vPosicao54;
 		contentPane.add(vPosicao54);
 		
 		vPosicao64 = new JLabel();
@@ -461,6 +491,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(5,3);
 			}
 		});
+		vPosicoes[5][3] = vPosicao64;
 		contentPane.add(vPosicao64);
 		
 		vPosicao74 = new JLabel();
@@ -471,6 +502,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(6,3);
 			}
 		});
+		vPosicoes[6][3] = vPosicao74;
 		contentPane.add(vPosicao74);
 		
 		vPosicao84 = new JLabel();
@@ -481,6 +513,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(7,3);
 			}
 		});
+		vPosicoes[7][3] = vPosicao84;
 		contentPane.add(vPosicao84);
 		
 		vPosicao15 = new JLabel();
@@ -491,6 +524,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(0,4);
 			}
 		});
+		vPosicoes[0][4] = vPosicao15;
 		contentPane.add(vPosicao15);
 		
 		vPosicao25 = new JLabel();
@@ -501,6 +535,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(1,4);
 			}
 		});
+		vPosicoes[1][4] = vPosicao25;
 		contentPane.add(vPosicao25);
 		
 		vPosicao35 = new JLabel();
@@ -511,6 +546,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(2,4);
 			}
 		});
+		vPosicoes[2][4] = vPosicao35;
 		contentPane.add(vPosicao35);
 		
 		vPosicao45 = new JLabel();
@@ -521,6 +557,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(3,4);
 			}
 		});
+		vPosicoes[3][4] = vPosicao45;
 		contentPane.add(vPosicao45);
 		
 		vPosicao55 = new JLabel();
@@ -531,6 +568,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(4,4);
 			}
 		});
+		vPosicoes[4][4] = vPosicao55;
 		contentPane.add(vPosicao55);
 		
 		vPosicao65 = new JLabel();
@@ -541,6 +579,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(5,4);
 			}
 		});
+		vPosicoes[5][4] = vPosicao65;
 		contentPane.add(vPosicao65);
 		
 		vPosicao75 = new JLabel();
@@ -551,6 +590,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(6,4);
 			}
 		});
+		vPosicoes[6][4] = vPosicao75;
 		contentPane.add(vPosicao75);
 		
 		vPosicao85 = new JLabel();
@@ -561,6 +601,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(7,4);
 			}
 		});
+		vPosicoes[7][4] = vPosicao85;
 		contentPane.add(vPosicao85);
 		
 		vPosicao16 = new JLabel();
@@ -571,6 +612,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(0,5);
 			}
 		});
+		vPosicoes[0][5] = vPosicao16;
 		contentPane.add(vPosicao16);
 		
 		vPosicao26 = new JLabel();
@@ -581,6 +623,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(1,5);
 			}
 		});
+		vPosicoes[1][5] = vPosicao26;
 		contentPane.add(vPosicao26);
 		
 		vPosicao36 = new JLabel();
@@ -591,6 +634,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(2,5);
 			}
 		});
+		vPosicoes[2][5] = vPosicao36;
 		contentPane.add(vPosicao36);
 		
 		vPosicao46 = new JLabel();
@@ -601,6 +645,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(3,5);
 			}
 		});
+		vPosicoes[3][5] = vPosicao46;
 		contentPane.add(vPosicao46);
 		
 		vPosicao56 = new JLabel();
@@ -611,6 +656,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(4,5);
 			}
 		});
+		vPosicoes[4][5] = vPosicao56;
 		contentPane.add(vPosicao56);
 		
 		vPosicao66 = new JLabel();
@@ -621,6 +667,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(5,5);
 			}
 		});
+		vPosicoes[5][5] = vPosicao66;
 		contentPane.add(vPosicao66);
 		
 		vPosicao76 = new JLabel();
@@ -631,6 +678,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(6,5);
 			}
 		});
+		vPosicoes[6][5] = vPosicao76;
 		contentPane.add(vPosicao76);
 		
 		vPosicao86 = new JLabel();
@@ -641,6 +689,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(7,5);
 			}
 		});
+		vPosicoes[7][5] = vPosicao86;
 		contentPane.add(vPosicao86);
 		
 		vPosicao17 = new JLabel();
@@ -651,6 +700,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(0,6);
 			}
 		});
+		vPosicoes[0][6] = vPosicao17;
 		contentPane.add(vPosicao17);
 		
 		vPosicao27 = new JLabel();
@@ -661,6 +711,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(1,6);
 			}
 		});
+		vPosicoes[1][6] = vPosicao27;
 		contentPane.add(vPosicao27);
 		
 		vPosicao37 = new JLabel();
@@ -671,6 +722,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(2,6);
 			}
 		});
+		vPosicoes[2][6] = vPosicao37;
 		contentPane.add(vPosicao37);
 		
 		vPosicao47 = new JLabel();
@@ -681,6 +733,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(3,6);
 			}
 		});
+		vPosicoes[3][6] = vPosicao47;
 		contentPane.add(vPosicao47);
 		
 		vPosicao57 = new JLabel();
@@ -691,6 +744,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(4,6);
 			}
 		});
+		vPosicoes[4][6] = vPosicao57;
 		contentPane.add(vPosicao57);
 		
 		vPosicao67 = new JLabel();
@@ -701,6 +755,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(5,6);
 			}
 		});
+		vPosicoes[5][6] = vPosicao67;
 		contentPane.add(vPosicao67);
 		
 		vPosicao77 = new JLabel();
@@ -711,6 +766,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(6,6);
 			}
 		});
+		vPosicoes[6][6] = vPosicao77;
 		contentPane.add(vPosicao77);
 		
 		vPosicao87 = new JLabel();
@@ -721,6 +777,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(7,6);
 			}
 		});
+		vPosicoes[7][6] = vPosicao87;
 		contentPane.add(vPosicao87);
 		
 		vPosicao18 = new JLabel();
@@ -731,6 +788,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(0,7);
 			}
 		});
+		vPosicoes[0][7] = vPosicao18;
 		contentPane.add(vPosicao18);
 		
 		vPosicao28 = new JLabel();
@@ -741,6 +799,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(1,7);
 			}
 		});
+		vPosicoes[1][7] = vPosicao28;
 		contentPane.add(vPosicao28);
 		
 		vPosicao38 = new JLabel();
@@ -751,6 +810,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(2,7);
 			}
 		});
+		vPosicoes[2][7] = vPosicao38;
 		contentPane.add(vPosicao38);
 		
 		vPosicao48 = new JLabel();
@@ -761,6 +821,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(3,7);
 			}
 		});
+		vPosicoes[3][7] = vPosicao48;
 		contentPane.add(vPosicao48);
 		
 		vPosicao58 = new JLabel();
@@ -771,6 +832,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(4,7);
 			}
 		});
+		vPosicoes[4][7] = vPosicao58;
 		contentPane.add(vPosicao58);
 		
 		vPosicao68 = new JLabel();
@@ -781,6 +843,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(5,7);
 			}
 		});
+		vPosicoes[5][7] = vPosicao68;
 		contentPane.add(vPosicao68);
 		
 		vPosicao78 = new JLabel();
@@ -791,6 +854,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(6,7);
 			}
 		});
+		vPosicoes[6][7] = vPosicao78;
 		contentPane.add(vPosicao78);
 		
 		vPosicao88 = new JLabel();
@@ -801,6 +865,7 @@ public class InterfaceTabuleiro extends JFrame {
 				clickTabuleiro(7,7);
 			}
 		});
+		vPosicoes[7][7] = vPosicao88;
 		contentPane.add(vPosicao88);
 		
 		
@@ -869,7 +934,7 @@ public class InterfaceTabuleiro extends JFrame {
 	}
 
 	public void atualizaTabuleiroMovimentoSimples(int i1, int j1, int i2, int j2) {
-		ImageIcon
+		
 
 		
 	}
