@@ -70,8 +70,19 @@ public class Peca {
 		if(this.tipo == 0 && preta == true) {
 			if((pos.getLinha() == posicao.getLinha()+1) && pos.getColuna()==posicao.getColuna())
 				return true;
-			
+		} else {
+			if(this.tipo == 0 && preta == false) {
+				if((pos.getLinha() == posicao.getLinha()-1) && pos.getColuna()==posicao.getColuna())
+					return true;
 		}
+		}
+		return false;
+	}
+
+
+	public boolean isRei() {
+		if(this.tipo==5)
+			return true;
 		return false;
 	}
 

@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
@@ -934,8 +935,8 @@ public class InterfaceTabuleiro extends JFrame {
 	}
 
 	public void atualizaTabuleiroMovimentoSimples(int i1, int j1, int i2, int j2) {
-		
-
-		
+		ImageIcon icon = (ImageIcon) vPosicoes[i1][j1].getIcon();
+		vPosicoes[i1][j1].setIcon(new ImageIcon("images/vazio.jpeg"));
+		vPosicoes[i2][j2].setIcon(icon);
 	}
 }
