@@ -86,4 +86,16 @@ public class AtorJogador {
 		this.tabuleiro.receberJogada(jogada);
 		
 	}
+
+	public void desconectar() {
+		boolean conectado = rede.isConectado();
+		if(!conectado) {
+			mostraMensagem("Nao esta conectado");
+		} else {
+			rede.desconectar();
+			rede.setConectado(false);
+			mostraMensagem("Desconectado com sucesso");
+		}
+		
+	}
 }

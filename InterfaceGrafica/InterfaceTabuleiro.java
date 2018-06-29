@@ -157,10 +157,10 @@ public class InterfaceTabuleiro extends JFrame {
 		btnIniciar.setBounds(29, 138, 114, 25);
 		contentPane.add(btnIniciar);
 		
-		JButton btnNewButton = new JButton("Sair");
+		JButton btnNewButton = new JButton("Desconectar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
+				desconectar();
 			}
 		});
 		btnNewButton.setBounds(29, 175, 114, 25);
@@ -944,5 +944,9 @@ public class InterfaceTabuleiro extends JFrame {
 	public void escondeBotaoIniciarPartida() {
 		this.btnIniciar.setVisible(false);
 		
+	}
+	
+	public void desconectar() {
+		atorJogador.desconectar();
 	}
 }

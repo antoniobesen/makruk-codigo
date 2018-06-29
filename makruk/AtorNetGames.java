@@ -120,6 +120,18 @@ public class AtorNetGames implements OuvidorProxy {
 		}
 		
 	}
+
+
+
+	public void desconectar() {
+		try {
+			proxy.desconectar();
+		} catch (NaoConectadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 }
