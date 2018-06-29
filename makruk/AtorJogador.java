@@ -30,8 +30,19 @@ public class AtorJogador {
 	}
 	
 	public void iniciarPartida() {
-		
-		rede.iniciarPartida();
+		boolean conectado = rede.isConectado();
+		if(conectado) {
+			boolean iniciando = rede.isIniciando();
+			if(iniciando) {
+				mostraMensagem("Aguarde, iniciando.");
+			} else {
+				rede.iniciarPartida();
+				rede.setIniciando(true);
+				this.interfaceTabuleiro.escondeBotaoIniciarPartida();
+			}
+		} else {
+			mostraMensagem("Conecte-se primeiro");
+		}
 	}
 
 	public void tratarInicio(int posicao, String nomeJogador) {

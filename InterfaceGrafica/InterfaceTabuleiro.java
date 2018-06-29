@@ -32,6 +32,7 @@ public class InterfaceTabuleiro extends JFrame {
 	private JPanel contentPane;
 	private AtorJogador atorJogador;
 	private JLabel[][] vPosicoes = new JLabel[8][8];
+	private JButton btnIniciar;
 
 	private JLabel vPosicao11 = null;
 	private JLabel vPosicao12 = null;
@@ -146,7 +147,7 @@ public class InterfaceTabuleiro extends JFrame {
 		btnConectar.setBounds(29, 98, 114, 25);
 		contentPane.add(btnConectar);
 		
-		JButton btnIniciar = new JButton("Iniciar");
+		btnIniciar = new JButton("Iniciar");
 		btnIniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				iniciarPartida();
@@ -938,5 +939,10 @@ public class InterfaceTabuleiro extends JFrame {
 		ImageIcon icon = (ImageIcon) vPosicoes[i1][j1].getIcon();
 		vPosicoes[i1][j1].setIcon(new ImageIcon("images/vazio.jpeg"));
 		vPosicoes[i2][j2].setIcon(icon);
+	}
+
+	public void escondeBotaoIniciarPartida() {
+		this.btnIniciar.setVisible(false);
+		
 	}
 }
