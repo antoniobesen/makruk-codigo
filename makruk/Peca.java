@@ -66,16 +66,59 @@ public class Peca {
 	}
 
 
-	public boolean podeMover(Posicao pos) {
-		if(this.tipo == 0 && preta == true) {
-			if((pos.getLinha() == posicao.getLinha()+1) && pos.getColuna()==posicao.getColuna())
-				return true;
-		} else {
-			if(this.tipo == 0 && preta == false) {
+	public boolean podeMover(Posicao pos, Posicao[][] posicoes) {
+		if(this.tipo == 0) {
+			if(this.preta==true) {
+				if((pos.getLinha() == posicao.getLinha()+1) && pos.getColuna()==posicao.getColuna())
+					return true;
+				return false;
+			}
+			else {
 				if((pos.getLinha() == posicao.getLinha()-1) && pos.getColuna()==posicao.getColuna())
 					return true;
+				return false;
+			}
+		} 
+		if(this.tipo==1) {
+			if(pos.getLinha()==posicao.getLinha() || pos.getColuna()==posicao.getColuna())
+				return true;
 		}
+		if(this.tipo==2) {
+			if((pos.getLinha()==posicao.getLinha()+2 && pos.getColuna()==posicao.getColuna()+1)
+				|| (pos.getLinha()==posicao.getLinha()+2 && pos.getColuna()==posicao.getColuna()-1)
+				|| (pos.getLinha()==posicao.getLinha()-2 && pos.getColuna()==posicao.getColuna()-1)
+				|| (pos.getLinha()==posicao.getLinha()-2 && pos.getColuna()==posicao.getColuna()+1)
+				|| (pos.getColuna()==posicao.getColuna()+2 && pos.getLinha()==posicao.getLinha()-1)
+				|| (pos.getColuna()==posicao.getColuna()+2 && pos.getLinha()==posicao.getLinha()+1)
+				|| (pos.getColuna()==posicao.getColuna()-2 && pos.getLinha()==posicao.getLinha()-1)
+                || (pos.getColuna()==posicao.getColuna()-2 && pos.getLinha()==posicao.getLinha()+1))
+					return true;
 		}
+		
+		if(this.tipo==3) {
+			if(this.preta==true) {
+				if(pos.getLinha()==this.posicao.getLinha()+1)
+					return true;
+			} else {
+				if(pos.getLinha()==this.posicao.getLinha()-1)
+					return true;
+			}
+		}
+		
+		if(this.tipo==4) {
+			if((pos.getLinha()==posicao.getLinha()+1 && pos.getColuna()==posicao.getColuna()+1)
+					 || (pos.getLinha()==posicao.getLinha()-1 && pos.getColuna()==posicao.getColuna()-1)
+					 || (pos.getLinha()==posicao.getLinha()+1 && pos.getColuna()==posicao.getColuna()-1)
+					 || (pos.getLinha()==posicao.getLinha()-1 && pos.getColuna()==posicao.getColuna()+1))
+						return true;
+		}
+		
+		if(this.tipo==5) {
+			if(pos.getLinha()==posicao.getLinha()+1 || pos.getLinha()==posicao.getLinha()-1
+					|| pos.getColuna()==posicao.getColuna()+1 || pos.getColuna()==posicao.getColuna()-1)
+						return true;
+		}
+		
 		return false;
 	}
 

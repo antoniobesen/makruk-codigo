@@ -194,7 +194,7 @@ public class Tabuleiro {
 					}
 				}
 			} else {
-				boolean podeMover = pecaPrimeiroClick.podeMover(posicoes[i][j]);
+				boolean podeMover = pecaPrimeiroClick.podeMover(posicoes[i][j] , posicoes);
 				if(!podeMover) {
 					atorJogador.mostraMensagem("posicao invalida");
 				} else {
