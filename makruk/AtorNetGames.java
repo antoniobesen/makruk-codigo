@@ -6,6 +6,7 @@ import br.ufsc.inf.leobr.cliente.Proxy;
 import br.ufsc.inf.leobr.cliente.exception.ArquivoMultiplayerException;
 import br.ufsc.inf.leobr.cliente.exception.JahConectadoException;
 import br.ufsc.inf.leobr.cliente.exception.NaoConectadoException;
+import br.ufsc.inf.leobr.cliente.exception.NaoJogandoException;
 import br.ufsc.inf.leobr.cliente.exception.NaoPossivelConectarException;
 
 public class AtorNetGames implements OuvidorProxy {
@@ -80,7 +81,7 @@ public class AtorNetGames implements OuvidorProxy {
 	}
 	@Override
 	public void receberJogada(Jogada jogada) {
-		// TODO Auto-generated method stub
+		this.atorJogador.receberJogada(jogada);
 		
 	}
 	@Override
@@ -106,6 +107,18 @@ public class AtorNetGames implements OuvidorProxy {
 	
 	public String getNomeJogadorAdversario(int posicao) {
 		return proxy.obterNomeAdversario(posicao);
+	}
+
+
+
+	public void enviarJogada(Jogada jogada) {
+		try {
+			proxy.enviaJogada(jogada);
+		} catch (NaoJogandoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	

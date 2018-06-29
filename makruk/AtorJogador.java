@@ -65,4 +65,14 @@ public class AtorJogador {
 		interfaceTabuleiro.atualizaTabuleiroMovimentoSimples(i1,j1,i2,j2);
 		
 	}
+
+	public void enviarJogada(Jogada jogada) {
+		rede.enviarJogada(jogada);
+		
+	}
+
+	public void receberJogada(br.ufsc.inf.leobr.cliente.Jogada jogada) {
+		this.tabuleiro.receberJogada(jogada);
+		
+	}
 }
