@@ -35,7 +35,7 @@ public class Tabuleiro {
 		this.jogador1.inicializarJogador(posicao,nomeJogador);
 		
 		
-		String nomeAdversario = atorJogador.getNomeJogadorAdversario(posicaoAdv);
+		String nomeAdversario = atorJogador.getNomeAdversario(posicaoAdv);
 		this.jogador2 = new Jogador();
 		this.jogador2.inicializarJogador(posicaoAdv, nomeAdversario);
 		
@@ -173,6 +173,7 @@ public class Tabuleiro {
 			}
 		
 	atorJogador.posicionarPecasNaInterface();
+	atorJogador.escondeBotaoIniciarPartida();
 	atorJogador.mostraMensagem("Você joga em "+posicao);
 
 	}

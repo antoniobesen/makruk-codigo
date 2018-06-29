@@ -53,8 +53,8 @@ public class AtorJogador {
 		
 	}
 
-	public String getNomeJogadorAdversario(int posicao) {
-		return rede.getNomeJogadorAdversario(posicao);
+	public String getNomeAdversario(int posicao) {
+		return rede.getNomeAdversario(posicao);
 	}
 
 	public void posicionarPecasNaInterface() {
@@ -96,6 +96,11 @@ public class AtorJogador {
 			rede.setConectado(false);
 			mostraMensagem("Desconectado com sucesso");
 		}
+		
+	}
+
+	public void escondeBotaoIniciarPartida() {
+		interfaceTabuleiro.escondeBotaoIniciarPartida();
 		
 	}
 }
