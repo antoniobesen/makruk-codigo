@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -26,6 +27,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JList;
 
 public class InterfaceTabuleiro extends JFrame {
 
@@ -33,6 +35,8 @@ public class InterfaceTabuleiro extends JFrame {
 	private AtorJogador atorJogador;
 	private JLabel[][] vPosicoes = new JLabel[8][8];
 	private JButton btnIniciar;
+	private JLabel[] placarJog1 = new JLabel[10];
+	private JLabel[] placarJog2 = new JLabel[10];
 
 	private JLabel vPosicao11 = null;
 	private JLabel vPosicao12 = null;
@@ -135,7 +139,7 @@ public class InterfaceTabuleiro extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblMakruk = new JLabel("MAKRUK");
-		lblMakruk.setBounds(202, 12, 66, 15);
+		lblMakruk.setBounds(394, 12, 66, 15);
 		contentPane.add(lblMakruk);
 		
 		JButton btnConectar = new JButton("Conectar");
@@ -870,6 +874,105 @@ public class InterfaceTabuleiro extends JFrame {
 		vPosicoes[7][7] = vPosicao88;
 		contentPane.add(vPosicao88);
 		
+		JLabel lblPlacar = new JLabel("Placar");
+		lblPlacar.setBounds(64, 248, 66, 15);
+		contentPane.add(lblPlacar);
+		
+		JLabel lblNewLabel = new JLabel("Nome Jogador 1");
+		lblNewLabel.setBounds(12, 275, 66, 15);
+		placarJog1[0]=lblNewLabel;
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nome jogador 2");
+		lblNewLabel_1.setBounds(102, 275, 66, 15);
+		placarJog2[0]=lblNewLabel_1;
+		contentPane.add(lblNewLabel_1);
+		
+		
+		JLabel lblNewLabel_2 = new JLabel("1");
+		lblNewLabel_2.setBounds(12, 290, 66, 15);
+		placarJog1[2]=lblNewLabel_2;
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("jog2");
+		lblNewLabel_3.setBounds(102, 290, 66, 15);
+		placarJog1[3]=lblNewLabel_3;
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("New label");
+		lblNewLabel_4.setBounds(12, 308, 66, 15);
+		placarJog1[4]=lblNewLabel_4;
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("New label");
+		lblNewLabel_5.setBounds(12, 326, 66, 15);
+		placarJog1[5] = lblNewLabel_5;
+		contentPane.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("New label");
+		lblNewLabel_6.setBounds(12, 345, 66, 15);
+		placarJog1[6]=lblNewLabel_6;
+		contentPane.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("New label");
+		lblNewLabel_7.setBounds(12, 360, 66, 15);
+		placarJog1[7]=lblNewLabel_7;
+		contentPane.add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_8 = new JLabel("New label");
+		lblNewLabel_8.setBounds(12, 378, 66, 15);
+		placarJog1[8]=lblNewLabel_8;
+		contentPane.add(lblNewLabel_8);
+		
+		JLabel lblNewLabel_9 = new JLabel("New label");
+		lblNewLabel_9.setBounds(12, 395, 66, 15);
+		placarJog1[9] = lblNewLabel_9;
+		contentPane.add(lblNewLabel_9);
+		
+		JLabel lblNewLabel_10 = new JLabel("teste");
+		lblNewLabel_10.setBounds(12, 415, 66, 15);
+		placarJog2[0] = lblNewLabel_10;
+		contentPane.add(lblNewLabel_10);
+		
+		JLabel lblNewLabel_11 = new JLabel("New label");
+		lblNewLabel_11.setBounds(102, 308, 66, 15);
+		placarJog2[0] = lblNewLabel_10;
+		contentPane.add(lblNewLabel_11);
+		
+		JLabel lblNewLabel_12 = new JLabel("New label");
+		lblNewLabel_12.setBounds(102, 326, 66, 15);
+		contentPane.add(lblNewLabel_12);
+		
+		JLabel lblNewLabel_13 = new JLabel("New label");
+		lblNewLabel_13.setBounds(102, 345, 66, 15);
+		contentPane.add(lblNewLabel_13);
+		
+		JLabel lblNewLabel_14 = new JLabel("New label");
+		lblNewLabel_14.setBounds(102, 360, 66, 15);
+		contentPane.add(lblNewLabel_14);
+		
+		JLabel lblNewLabel_15 = new JLabel("New label");
+		lblNewLabel_15.setBounds(102, 378, 66, 15);
+		contentPane.add(lblNewLabel_15);
+		
+		JLabel lblNewLabel_16 = new JLabel("New label");
+		lblNewLabel_16.setBounds(102, 395, 66, 15);
+		contentPane.add(lblNewLabel_16);
+		
+		JLabel lblNewLabel_17 = new JLabel("New label");
+		lblNewLabel_17.setBounds(102, 415, 66, 15);
+		contentPane.add(lblNewLabel_17);
+		
+		JLabel lblNewLabel_18 = new JLabel("New label");
+		lblNewLabel_18.setBounds(12, 432, 66, 15);
+		contentPane.add(lblNewLabel_18);
+		
+		JLabel lblNewLabel_19 = new JLabel("New label");
+		lblNewLabel_19.setBounds(102, 430, 66, 15);
+		contentPane.add(lblNewLabel_19);
+		DefaultListModel model = new DefaultListModel();
+		model.addElement("Teste!");
+		
 		
 		
 		
@@ -948,5 +1051,10 @@ public class InterfaceTabuleiro extends JFrame {
 	
 	public void desconectar() {
 		atorJogador.desconectar();
+	}
+
+	public void mostraPlacar(String nome1, String nome2) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -174,6 +174,7 @@ public class Tabuleiro {
 		
 	atorJogador.posicionarPecasNaInterface();
 	atorJogador.escondeBotaoIniciarPartida();
+	atorJogador.mostraPlacar(this.jogador1.getNome(), this.jogador2.getNome());
 	atorJogador.mostraMensagem("Você joga em "+posicao);
 
 	}

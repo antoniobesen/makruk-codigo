@@ -103,4 +103,9 @@ public class AtorJogador {
 		interfaceTabuleiro.escondeBotaoIniciarPartida();
 		
 	}
+
+	public void mostraPlacar(String nome1, String nome2) {
+		interfaceTabuleiro.mostraPlacar(nome1,nome2);
+		
+	}
 }
