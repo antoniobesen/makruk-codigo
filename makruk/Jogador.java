@@ -4,6 +4,7 @@ public class Jogador {
 	protected String nome;
 	protected boolean vencedor, jogadorDaVez;
 	protected Peca[] pecasCapturadas;
+	protected int proximaPosicao = 0;
 	
 	
 	public void inicializarJogador(int posicao, String nomeJogador) {
@@ -13,6 +14,7 @@ public class Jogador {
 			this.jogadorDaVez=false;
 		pecasCapturadas = new Peca[16];
 		vencedor = false;
+		this.proximaPosicao = 0;
 		setNome(nomeJogador);
 		
 	}
@@ -55,5 +57,10 @@ public class Jogador {
 
 	public void setPecasCapturadas(Peca[] pecasCapturadas) {
 		this.pecasCapturadas = pecasCapturadas;
+	}
+	
+	public void adicionarPecaCapturada(Peca peca) {
+		this.pecasCapturadas[this.proximaPosicao]=peca;
+		this.proximaPosicao++;
 	}
 }

@@ -180,30 +180,35 @@ public class Tabuleiro {
 	}
 
 	public void clickTabuleiro(int i, int j) {
-		if(!jogador1.isJogadorDaVez())
+		boolean daVez = jogador1.isJogadorDaVez();
+		if(!daVez)
 			atorJogador.mostraMensagem("Aguarde sua vez");
 		else {
-			if(primeiroClick) {
-				if(!posicoes[i][j].isOcupado()) {
+			if(this.primeiroClick) {
+				boolean ocupada = posicoes[i][j].isOcupado();
+				if(!ocupada) {
 					atorJogador.mostraMensagem("Clique numa peca");
 				}
 				else {
-					if(posicoes[i][j].getPecaOcupante().isDonoLocal()) {
+					boolean donoLocal = posicoes[i][j].getPecaOcupante().isDonoLocal();
+					if(donoLocal) {
 						this.pecaPrimeiroClick = posicoes[i][j].getPecaOcupante();
 						setPrimeiroClick(false);
 					} else {
 						atorJogador.mostraMensagem("Clique numa peca sua");
 					}
-				}
+				} // ate aqui 100% ds
 			} else {
 				boolean podeMover = pecaPrimeiroClick.podeMover(posicoes[i][j] , posicoes);
 				if(!podeMover) {
 					atorJogador.mostraMensagem("posicao invalida");
+					this.setPrimeiroClick(true);
 				} else {
 					boolean ocupada = posicoes[i][j].isOcupado();
 					if(ocupada) {
 						Peca ocupante = posicoes[i][j].getPecaOcupante();
-						if(ocupante.isDonoLocal()) {
+						boolean donoLocal = ocupante.isDonoLocal();
+						if(donoLocal) {
 							atorJogador.mostraMensagem("Posicao invalida");
 						} else {
 							this.posicaoPrimeiroClick=this.pecaPrimeiroClick.getPosicao();
@@ -221,6 +226,7 @@ public class Tabuleiro {
 								this.empate=true;
 							} else {
 								this.pecaSegundoClick.setCapturada(true);
+								this.jogador1.adicionarPecaCapturada(pecaSegundoClick);
 								boolean reiCapturado = this.pecaSegundoClick.isRei();
 								if(reiCapturado) {
 									this.jogador1.setVencedor(true);
