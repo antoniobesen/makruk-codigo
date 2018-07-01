@@ -40,6 +40,7 @@ public class InterfaceTabuleiro extends JFrame {
 	private JLabel[] placarJog2 = new JLabel[10];
 	private JLabel lblPlacar, lblContagem;
 	private int qtdePeaoJog1, qtdePeaoJog2;
+	private int proxNumJog1,proxNumJog2;
 	
 
 	private JLabel vPosicao11 = null;
@@ -135,6 +136,8 @@ public class InterfaceTabuleiro extends JFrame {
 		atorJogador = new AtorJogador(this);
 		this.qtdePeaoJog1=0;
 		this.qtdePeaoJog2=0;
+		this.proxNumJog1=2;
+		this.proxNumJog2=2;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 800, 750);
@@ -1088,12 +1091,13 @@ public class InterfaceTabuleiro extends JFrame {
 
 	public void atualizarInterfacePlacar(int i, Peca[] pecas) {
 		if(i==1) {
-			for(int j = 1; j<10;j++) {
-				if(pecas[j-1]!=null) {
-					if(pecas[j-1].getTipo()==0) {
+			for(int j = 0; j<16;j++) {
+				if(pecas[j]!=null) {
+					if(pecas[j].getTipo()==0) {
 						this.qtdePeaoJog1++;
 					} else {
-						placarJog1[j+1].setText(pecas[j-1].toString());
+						placarJog1[(2+j)].setText(pecas[j].toString());
+						
 					}
 				}
 			}
@@ -1102,12 +1106,12 @@ public class InterfaceTabuleiro extends JFrame {
 				this.qtdePeaoJog1=0;
 			}
 		} else {
-			for(int j = 1; j<10;j++) {
-				if(pecas[j-1]!=null) {
-					if(pecas[j-1].getTipo()==0) {
+			for(int j = 0; j<16;j++) {
+				if(pecas[j]!=null) {
+					if(pecas[j].getTipo()==0) {
 						this.qtdePeaoJog2++;
 					} else {
-						placarJog2[j].setText(pecas[j-1].toString());
+						placarJog2[2+j].setText(pecas[j].toString());
 					}
 				}
 			}

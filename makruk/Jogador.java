@@ -4,7 +4,7 @@ public class Jogador {
 	protected String nome;
 	protected boolean vencedor, jogadorDaVez;
 	protected Peca[] pecasCapturadas;
-	protected int proximaPosicao = 0;
+	protected int proximaPosicao;
 	
 	
 	public void inicializarJogador(int posicao, String nomeJogador) {
