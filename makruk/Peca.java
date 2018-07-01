@@ -69,12 +69,24 @@ public class Peca {
 	public boolean podeMover(Posicao pos, Posicao[][] posicoes) {
 		if(this.tipo == 0) {
 			if(this.preta==true) {
-				if((pos.getLinha() == posicao.getLinha()+1) && pos.getColuna()==posicao.getColuna())
+				if((pos.getLinha() == posicao.getLinha()+1) && pos.getColuna()==posicao.getColuna()
+						&& !posicoes[pos.getLinha()][pos.getColuna()].isOcupado())
+					return true;
+				if(((pos.getLinha() == posicao.getLinha()+1) && pos.getColuna()==posicao.getColuna()+1
+						&& posicoes[pos.getLinha()][pos.getColuna()].isOcupado())
+						|| ((pos.getLinha() == posicao.getLinha()+1) && pos.getColuna()==posicao.getColuna()-1
+								&& posicoes[pos.getLinha()][pos.getColuna()].isOcupado()))
 					return true;
 				return false;
 			}
 			else {
-				if((pos.getLinha() == posicao.getLinha()-1) && pos.getColuna()==posicao.getColuna())
+				if((pos.getLinha() == posicao.getLinha()-1) && pos.getColuna()==posicao.getColuna()
+						&& !posicoes[pos.getLinha()][pos.getColuna()].isOcupado())
+					return true;
+				if(((pos.getLinha() == posicao.getLinha()-1) && pos.getColuna()==posicao.getColuna()+1
+						&& posicoes[pos.getLinha()][pos.getColuna()].isOcupado())
+						|| ((pos.getLinha() == posicao.getLinha()-1) && pos.getColuna()==posicao.getColuna()-1
+								&& posicoes[pos.getLinha()][pos.getColuna()].isOcupado()))
 					return true;
 				return false;
 			}
