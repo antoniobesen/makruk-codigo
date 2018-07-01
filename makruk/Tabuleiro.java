@@ -197,7 +197,7 @@ public class Tabuleiro {
 					} else {
 						atorJogador.mostraMensagem("Clique numa peca sua");
 					}
-				} // ate aqui 100% ds
+				} 
 			} else {
 				boolean podeMover = pecaPrimeiroClick.podeMover(posicoes[i][j] , posicoes);
 				if(!podeMover) {
@@ -223,7 +223,7 @@ public class Tabuleiro {
 							if(fim) {
 								atorJogador.mostraMensagem("Fim de jogo. Empate.");
 								this.setPartidaEmAndamento(false);
-								this.empate=true;
+								this.setPartidaEmpatada(true);
 							} else {
 								this.pecaSegundoClick.setCapturada(true);
 								this.jogador1.adicionarPecaCapturada(pecaSegundoClick);
@@ -268,7 +268,8 @@ public class Tabuleiro {
 								this.posicaoPrimeiroClick.getColuna(),i,j);
 						
 					}
-					refinamentoFinalDeJogada(1);
+					refinamentoFinalDeJogada(1, this.pecaSegundoClick);
+					this.pecaSegundoClick=null;
 				
 				}
 			} 
@@ -321,28 +322,60 @@ public class Tabuleiro {
 		boolean cIniciando = jog.isIniciandoContagem();
 		boolean cIniciada = jog.isContagemIniciada();
 		
-		//if(cIniciada) {
-		//	
-		//}
-		posicoes[i1][j1].setOcupado(false);
-		posicoes[i2][j2].setOcupado(true);
-		posicoes[i2][j2].setPecaOcupante(posicoes[i1][j1].getPecaOcupante());
-		posicoes[i1][j1].getPecaOcupante().setPosicao(posicoes[i2][j2]);
-		posicoes[i1][j1].setPecaOcupante(null);
-		
-		this.jogador1.setJogadorDaVez(true);
-		this.jogador2.setJogadorDaVez(false);
+		if(cIniciada) {
+			this.incrementarContagem();
+			boolean fim = verificarFimDaContagem();
+			if(fim) {
+				this.setPartidaEmAndamento(false);
+				this.setPartidaEmpatada(true);
+				atorJogador.mostraMensagem("Partida empatada");
+			}
+		} else {
+			if(cIniciando) {
+				//int tipo = verificaContagem();
+				//this.setContagemMaxima(50);
+				//this.setContagemIniciada(true);
+				//this.incrementarContagem();
+			}
+		}
+		Peca peca1 = posicoes[i1][j1].getPecaOcupante();
+		Peca pecaCapturada=null;
+		boolean ocupada = posicoes[i2][j2].isOcupado();
+		if(!ocupada) {
+			posicoes[i2][j2].setPecaOcupante(peca1);
+			peca1.setPosicao(posicoes[i1][j1]);
+			posicoes[i1][j1].setPecaOcupante(null);
+			posicoes[i1][j1].setOcupado(false);
+			posicoes[i2][j2].setOcupado(true);
+		} else {
+			pecaCapturada = posicoes[i2][j2].getPecaOcupante();
+			posicoes[i2][j2].setPecaOcupante(peca1);
+			peca1.setPosicao(posicoes[i1][j1]);
+			posicoes[i1][j1].setPecaOcupante(null);
+			posicoes[i1][j1].setOcupado(false);
+			posicoes[i2][j2].setOcupado(true);
+			this.jogador2.adicionarPecaCapturada(pecaCapturada);
+			boolean fimDoJogo = pecaCapturada.isRei();
+			if(fimDoJogo) {
+				this.setPartidaEmAndamento(false);
+				this.jogador2.setVencedor(true);
+				this.atorJogador.mostraMensagem("Voce perdeu!");
+			}
+		}
 		atorJogador.atualizaTabuleiroMovimentoSimples(i1,
 				j1, i2, j2);
+		this.jogador1.setJogadorDaVez(true);
+		this.jogador2.setJogadorDaVez(false);
+		this.refinamentoFinalDeJogada(2, pecaCapturada);
+		
 	}
 	
-	public void refinamentoFinalDeJogada(int i) {
+	public void refinamentoFinalDeJogada(int i , Peca pecaCapturada) {
 		boolean iniciada = isContagemIniciada();
 		Peca[] pecas;
 		if(iniciada) 
 			atorJogador.atualizaContagemInterface(this.contagem);
-		Peca peca = this.pecaSegundoClick;
-		if(pecaSegundoClick!=null) {
+		if(pecaCapturada!=null) {
 			if(i==1) {
 				pecas = this.jogador1.getPecasCapturadas();
 			} else {
@@ -351,6 +384,10 @@ public class Tabuleiro {
 			atorJogador.atualizarInterfacePlacar(i, pecas);
 			
 		} 
+	}
+	
+	public void setPartidaEmpatada(boolean empate) {
+		this.empate=empate;
 	}
 	
 	
