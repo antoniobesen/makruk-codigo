@@ -128,5 +128,16 @@ public class Peca {
 			return true;
 		return false;
 	}
+	
+	public String toString() {
+		switch(this.tipo) {
+		case 0: return "Peao";
+		case 1: return "Torre";
+		case 2: return "Cavalo";
+		case 3: return "Bispo";
+		case 4: return "Rainha";
+		default: return "Rei";
+		}
+	}
 
 }

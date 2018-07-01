@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import makruk.AtorJogador;
+import makruk.Peca;
 
 import java.awt.GridLayout;
 import java.awt.Rectangle;
@@ -37,7 +38,9 @@ public class InterfaceTabuleiro extends JFrame {
 	private JButton btnIniciar;
 	private JLabel[] placarJog1 = new JLabel[10];
 	private JLabel[] placarJog2 = new JLabel[10];
-	private JLabel lblPlacar;
+	private JLabel lblPlacar, lblContagem;
+	private int qtdePeaoJog1, qtdePeaoJog2;
+	
 
 	private JLabel vPosicao11 = null;
 	private JLabel vPosicao12 = null;
@@ -130,6 +133,8 @@ public class InterfaceTabuleiro extends JFrame {
 	 */
 	public InterfaceTabuleiro() {
 		atorJogador = new AtorJogador(this);
+		this.qtdePeaoJog1=0;
+		this.qtdePeaoJog2=0;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 800, 750);
@@ -980,6 +985,14 @@ public class InterfaceTabuleiro extends JFrame {
 		placarJog2[9] = lblNewLabel_19;
 		contentPane.add(lblNewLabel_19);
 		
+		JLabel lblTituloContagem = new JLabel("Contagem");
+		lblTituloContagem.setBounds(38, 12, 105, 15);
+		contentPane.add(lblTituloContagem);
+		
+		lblContagem = new JLabel("      0");
+		lblContagem.setBounds(48, 39, 66, 15);
+		contentPane.add(lblContagem);
+		
 		
 		
 		
@@ -1067,4 +1080,41 @@ public class InterfaceTabuleiro extends JFrame {
 		placarJog2[0].setText(nome2);
 		
 	}
+
+	public void atualizaContagemInterface(int contagem) {
+		this.lblContagem.setText(Integer.toString(contagem));
+		
+	}
+
+	public void atualizarInterfacePlacar(int i, Peca[] pecas) {
+		if(i==1) {
+			for(int j = 1; j<10;j++) {
+				if(pecas[j-1]!=null) {
+					if(pecas[j-1].getTipo()==0) {
+						this.qtdePeaoJog1++;
+					} else {
+						placarJog1[j+1].setText(pecas[j-1].toString());
+					}
+				}
+			}
+			if(this.qtdePeaoJog1>0) {
+				placarJog1[1].setText(this.qtdePeaoJog1+"x peoes");
+				this.qtdePeaoJog1=0;
+			}
+		} else {
+			for(int j = 1; j<10;j++) {
+				if(pecas[j-1]!=null) {
+					if(pecas[j-1].getTipo()==0) {
+						this.qtdePeaoJog2++;
+					} else {
+						placarJog2[j].setText(pecas[j-1].toString());
+					}
+				}
+			}
+			if(this.qtdePeaoJog2>0) {
+				placarJog2[1].setText(this.qtdePeaoJog2+"x peoes");
+				this.qtdePeaoJog2=0;
+			}
+	}
+}
 }

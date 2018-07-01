@@ -266,7 +266,9 @@ public class Tabuleiro {
 						this.prepararEnvioDeJogada(
 								this.posicaoPrimeiroClick.getLinha(),
 								this.posicaoPrimeiroClick.getColuna(),i,j);
+						
 					}
+					refinamentoFinalDeJogada(1);
 				
 				}
 			} 
@@ -300,8 +302,14 @@ public class Tabuleiro {
 		this.emAndamento=emAndamento;
 	}
 	
+	public boolean isContagemIniciada() {
+		return this.contagemIniciada;
+	}
+	
 	public void prepararEnvioDeJogada(int i1, int j1, int i2, int j2) {
-		atorJogador.enviarJogada(new Jogada(i1,j1,i2,j2,this.iniciandoContagem,this.contagemIniciada));
+		Jogada jogada = new Jogada();
+		jogada.inicializar(i1,j1,i2,j2,this.iniciandoContagem,this.contagemIniciada);
+		atorJogador.enviarJogada(jogada);	
 	}
 
 	public void receberJogada(br.ufsc.inf.leobr.cliente.Jogada jogada) {
@@ -313,6 +321,9 @@ public class Tabuleiro {
 		boolean cIniciando = jog.isIniciandoContagem();
 		boolean cIniciada = jog.isContagemIniciada();
 		
+		//if(cIniciada) {
+		//	
+		//}
 		posicoes[i1][j1].setOcupado(false);
 		posicoes[i2][j2].setOcupado(true);
 		posicoes[i2][j2].setPecaOcupante(posicoes[i1][j1].getPecaOcupante());
@@ -323,6 +334,23 @@ public class Tabuleiro {
 		this.jogador2.setJogadorDaVez(false);
 		atorJogador.atualizaTabuleiroMovimentoSimples(i1,
 				j1, i2, j2);
+	}
+	
+	public void refinamentoFinalDeJogada(int i) {
+		boolean iniciada = isContagemIniciada();
+		Peca[] pecas;
+		if(iniciada) 
+			atorJogador.atualizaContagemInterface(this.contagem);
+		Peca peca = this.pecaSegundoClick;
+		if(pecaSegundoClick!=null) {
+			if(i==1) {
+				pecas = this.jogador1.getPecasCapturadas();
+			} else {
+				pecas = this.jogador2.getPecasCapturadas();
+			}
+			atorJogador.atualizarInterfacePlacar(i, pecas);
+			
+		} 
 	}
 	
 	

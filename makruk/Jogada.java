@@ -37,5 +37,19 @@ public class Jogada implements br.ufsc.inf.leobr.cliente.Jogada {
 		this.iniciandoContagem = iniciandoContagem;
 		this.contagemIniciada = contagemIniciada;
 	}
+
+	public Jogada() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void inicializar(int linha1, int coluna1, int linha2, int coluna2, boolean iniciandoContagem,
+			boolean contagemIniciada) {
+		this.linha1 = linha1;
+		this.coluna1 = coluna1;
+		this.linha2 = linha2;
+		this.coluna2 = coluna2;
+		this.iniciandoContagem = iniciandoContagem;
+		this.contagemIniciada = contagemIniciada;
+	}
 	
 }

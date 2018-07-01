@@ -108,4 +108,14 @@ public class AtorJogador {
 		interfaceTabuleiro.mostraPlacar(nome1,nome2);
 		
 	}
+
+	public void atualizaContagemInterface(int contagem) {
+		interfaceTabuleiro.atualizaContagemInterface(contagem);
+		
+	}
+
+	public void atualizarInterfacePlacar(int i, Peca[] pecas) {
+		interfaceTabuleiro.atualizarInterfacePlacar(i , pecas);
+		
+	}
 }
