@@ -231,6 +231,8 @@ public class Tabuleiro {
 								if(reiCapturado) {
 									this.jogador1.setVencedor(true);
 									this.setPartidaEmAndamento(false);
+									atorJogador.atualizaTabuleiroMovimentoSimples(this.posicaoPrimeiroClick.getLinha(),
+											this.posicaoPrimeiroClick.getColuna(), i, j);
 									atorJogador.mostraMensagem("Voce venceu!");
 									this.prepararEnvioDeJogada(
 											this.posicaoPrimeiroClick.getLinha(),

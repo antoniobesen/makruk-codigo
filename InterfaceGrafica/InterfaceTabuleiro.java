@@ -36,8 +36,8 @@ public class InterfaceTabuleiro extends JFrame {
 	private AtorJogador atorJogador;
 	private JLabel[][] vPosicoes = new JLabel[8][8];
 	private JButton btnIniciar;
-	private JLabel[] placarJog1 = new JLabel[10];
-	private JLabel[] placarJog2 = new JLabel[10];
+	private JLabel[] placarJog1 = new JLabel[17];
+	private JLabel[] placarJog2 = new JLabel[17];
 	private JLabel lblPlacar, lblContagem;
 	private int qtdePeaoJog1, qtdePeaoJog2;
 	private int proxNumJog1,proxNumJog2;
@@ -996,6 +996,76 @@ public class InterfaceTabuleiro extends JFrame {
 		lblContagem.setBounds(48, 39, 66, 15);
 		contentPane.add(lblContagem);
 		
+		JLabel lblNewLabel_20 = new JLabel("");
+		lblNewLabel_20.setBounds(12, 454, 66, 15);
+		placarJog1[10] = lblNewLabel_20;
+		contentPane.add(lblNewLabel_20);
+		
+		JLabel lblNewLabel_21 = new JLabel("");
+		lblNewLabel_21.setBounds(12, 469, 66, 15);
+		placarJog1[11] = lblNewLabel_21;
+		contentPane.add(lblNewLabel_21);
+		
+		JLabel lblNewLabel_22 = new JLabel("");
+		lblNewLabel_22.setBounds(12, 485, 66, 15);
+		placarJog1[12] = lblNewLabel_22;
+		contentPane.add(lblNewLabel_22);
+		
+		JLabel lblNewLabel_23 = new JLabel("");
+		lblNewLabel_23.setBounds(12, 500, 66, 15);
+		placarJog1[13] = lblNewLabel_23;
+		contentPane.add(lblNewLabel_23);
+		
+		JLabel lblNewLabel_24 = new JLabel("");
+		lblNewLabel_24.setBounds(12, 518, 66, 15);
+		placarJog1[14] = lblNewLabel_24;
+		contentPane.add(lblNewLabel_24);
+		
+		JLabel lblNewLabel_25 = new JLabel("");
+		lblNewLabel_25.setBounds(12, 530, 66, 15);
+		placarJog1[15] = lblNewLabel_25;
+		contentPane.add(lblNewLabel_25);
+		
+		JLabel lblNewLabel_26 = new JLabel("");
+		lblNewLabel_26.setBounds(12, 544, 66, 15);
+		placarJog1[16] = lblNewLabel_26;
+		contentPane.add(lblNewLabel_26);
+		
+		JLabel lblNewLabel_27 = new JLabel("");
+		lblNewLabel_27.setBounds(90, 454, 66, 15);
+		placarJog2[10] = lblNewLabel_27;
+		contentPane.add(lblNewLabel_27);
+		
+		JLabel lblNewLabel_28 = new JLabel("");
+		lblNewLabel_28.setBounds(90, 469, 66, 15);
+		placarJog2[11] = lblNewLabel_28;
+		contentPane.add(lblNewLabel_28);
+		
+		JLabel lblNewLabel_29 = new JLabel("");
+		lblNewLabel_29.setBounds(90, 485, 66, 15);
+		placarJog2[12] = lblNewLabel_29;
+		contentPane.add(lblNewLabel_29);
+		
+		JLabel lblNewLabel_30 = new JLabel("");
+		lblNewLabel_30.setBounds(90, 500, 66, 15);
+		placarJog2[13] = lblNewLabel_30;
+		contentPane.add(lblNewLabel_30);
+		
+		JLabel lblNewLabel_31 = new JLabel("");
+		lblNewLabel_31.setBounds(90, 518, 66, 15);
+		placarJog2[14] = lblNewLabel_31;
+		contentPane.add(lblNewLabel_31);
+		
+		JLabel lblNewLabel_32 = new JLabel("");
+		lblNewLabel_32.setBounds(90, 530, 66, 15);
+		placarJog2[15] = lblNewLabel_32;
+		contentPane.add(lblNewLabel_32);
+		
+		JLabel lblNewLabel_33 = new JLabel("");
+		lblNewLabel_33.setBounds(90, 544, 66, 15);
+		placarJog2[16] = lblNewLabel_33;
+		contentPane.add(lblNewLabel_33);
+		
 		
 		
 		
@@ -1091,34 +1161,14 @@ public class InterfaceTabuleiro extends JFrame {
 
 	public void atualizarInterfacePlacar(int i, Peca[] pecas) {
 		if(i==1) {
-			for(int j = 0; j<16;j++) {
-				if(pecas[j]!=null) {
-					if(pecas[j].getTipo()==0) {
-						this.qtdePeaoJog1++;
-					} else {
-						placarJog1[(2+j)].setText(pecas[j].toString());
-						
-					}
-				}
-			}
-			if(this.qtdePeaoJog1>0) {
-				placarJog1[1].setText(this.qtdePeaoJog1+"x peoes");
-				this.qtdePeaoJog1=0;
-			}
+			for(int j = 0; j<16;j++)
+				if(pecas[j]!=null)
+					placarJog1[(j+1)].setText(pecas[j].toString());
+			
 		} else {
-			for(int j = 0; j<16;j++) {
-				if(pecas[j]!=null) {
-					if(pecas[j].getTipo()==0) {
-						this.qtdePeaoJog2++;
-					} else {
-						placarJog2[2+j].setText(pecas[j].toString());
-					}
-				}
-			}
-			if(this.qtdePeaoJog2>0) {
-				placarJog2[1].setText(this.qtdePeaoJog2+"x peoes");
-				this.qtdePeaoJog2=0;
-			}
+			for(int j = 0; j<16;j++)
+				if(pecas[j]!=null)
+					placarJog2[(j+1)].setText(pecas[j].toString());
 	}
 }
 }
