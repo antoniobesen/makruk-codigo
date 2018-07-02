@@ -127,7 +127,8 @@ public class Peca {
 		
 		if(this.tipo==5) {
 			if(pos.getLinha()==posicao.getLinha()+1 || pos.getLinha()==posicao.getLinha()-1
-					|| pos.getColuna()==posicao.getColuna()+1 || pos.getColuna()==posicao.getColuna()-1)
+					|| (pos.getColuna()==posicao.getColuna()+1 && pos.getLinha()==posicao.getLinha()) 
+					|| (pos.getColuna()==posicao.getColuna()-1) && pos.getLinha()==posicao.getLinha())
 						return true;
 		}
 		

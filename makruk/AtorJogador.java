@@ -19,29 +19,39 @@ public class AtorJogador {
 	
 	public void conectar() {
 		String nome = null;
-		if(rede.isConectado())
-			interfaceTabuleiro.mostraMensagem("Já conectado");
+		String msg = null;
+		if(rede.isConectado()) {
+			msg = "Já está conectado";
+			interfaceTabuleiro.mostraMensagem(msg);
+		}
 		else {
 			nome=interfaceTabuleiro.pedeNomeJogador();
 			rede.conectar("localhost", nome);
 			rede.setConectado(true);
-			interfaceTabuleiro.mostraMensagem("Conectado com sucesso");
+			msg = "Conectado com sucesso";
+			interfaceTabuleiro.mostraMensagem(msg);
 		}
 	}
 	
 	public void iniciarPartida() {
-		boolean conectado = rede.isConectado();
+		boolean conectado;
+		boolean iniciando;
+		String msg;
+		conectado = rede.isConectado();
 		if(conectado) {
-			boolean iniciando = rede.isIniciando();
+			iniciando = rede.isIniciando();
 			if(iniciando) {
-				mostraMensagem("Aguarde, iniciando.");
+				msg = "Já clicou para iniciar";
+				mostraMensagem(msg);
 			} else {
 				rede.iniciarPartida();
-				rede.setIniciando(true);
+				iniciando = true;
+				rede.setIniciando(iniciando);
 				this.interfaceTabuleiro.escondeBotaoIniciarPartida();
 			}
 		} else {
-			mostraMensagem("Conecte-se primeiro");
+			msg = "Nao esta conectado";
+			mostraMensagem(msg);
 		}
 	}
 
@@ -89,12 +99,16 @@ public class AtorJogador {
 
 	public void desconectar() {
 		boolean conectado = rede.isConectado();
+		String msg;
 		if(!conectado) {
-			mostraMensagem("Nao esta conectado");
+			msg = "Ja esta desconectado";
+			mostraMensagem(msg);
 		} else {
 			rede.desconectar();
-			rede.setConectado(false);
-			mostraMensagem("Desconectado com sucesso");
+			conectado = false;
+			rede.setConectado(conectado);
+			msg = "Desconectado com sucesso";
+			mostraMensagem(msg);
 		}
 		
 	}

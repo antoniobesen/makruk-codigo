@@ -221,9 +221,15 @@ public class Tabuleiro {
 								this.fim = verificarFimDaContagem();
 							}
 							if(fim) {
-								atorJogador.mostraMensagem("Fim de jogo. Empate.");
 								this.setPartidaEmAndamento(false);
 								this.setPartidaEmpatada(true);
+								
+								atorJogador.atualizaTabuleiroMovimentoSimples(this.posicaoPrimeiroClick.getLinha(),
+										this.posicaoPrimeiroClick.getColuna(), i, j);
+								this.prepararEnvioDeJogada(
+										this.posicaoPrimeiroClick.getLinha(),
+										this.posicaoPrimeiroClick.getColuna(),i,j);
+								atorJogador.mostraMensagem("Fim de jogo. Empate.");
 							} else {
 								this.pecaSegundoClick.setCapturada(true);
 								this.jogador1.adicionarPecaCapturada(pecaSegundoClick);
@@ -257,9 +263,17 @@ public class Tabuleiro {
 							this.fim = verificarFimDaContagem();
 						}
 						if(fim) {
-							atorJogador.mostraMensagem("Fim de jogo. Empate.");
 							this.setPartidaEmAndamento(false);
 							this.setPartidaEmpatada(true);
+							
+							atorJogador.atualizaTabuleiroMovimentoSimples(this.posicaoPrimeiroClick.getLinha(),
+									this.posicaoPrimeiroClick.getColuna(), i, j);
+							this.prepararEnvioDeJogada(
+									this.posicaoPrimeiroClick.getLinha(),
+									this.posicaoPrimeiroClick.getColuna(),i,j);
+							atorJogador.mostraMensagem("Fim de jogo. Empate.");
+							
+							
 						} else {
 						this.pecaPrimeiroClick.getPosicao().setOcupado(false);
 						posicoes[i][j].setOcupado(true);
@@ -324,9 +338,17 @@ public class Tabuleiro {
 	}
 	
 	public void prepararEnvioDeJogada(int i1, int j1, int i2, int j2) {
+		boolean iniciada;
+		boolean iniciando;
 		Jogada jogada = new Jogada();
+		iniciada = this.isContagemIniciada();
+		iniciando = this.isContagemIniciando();
 		jogada.inicializar(i1,j1,i2,j2,this.iniciandoContagem,this.contagemIniciada);
 		atorJogador.enviarJogada(jogada);	
+	}
+
+	public boolean isContagemIniciando() {
+		return this.iniciandoContagem;
 	}
 
 	public void receberJogada(br.ufsc.inf.leobr.cliente.Jogada jogada) {
@@ -339,6 +361,7 @@ public class Tabuleiro {
 		boolean cIniciada = jog.isContagemIniciada();
 		
 		if(cIniciada) {
+			atorJogador.mostraMensagem("incrementando");
 			this.incrementarContagem();
 			boolean fim = verificarFimDaContagem();
 			atorJogador.atualizaContagemInterface(this.contagem);
@@ -352,6 +375,7 @@ public class Tabuleiro {
 			if(cIniciando) {
 				this.setContagemMaxima(65);
 				this.setContagemIniciada(true);
+				atorJogador.mostraMensagem("incrementando");
 				this.incrementarContagem();
 			}
 		}
