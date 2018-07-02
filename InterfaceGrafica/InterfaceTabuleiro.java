@@ -157,7 +157,7 @@ public class InterfaceTabuleiro extends JFrame {
 				conectar();
 			}
 		});
-		btnConectar.setBounds(29, 98, 114, 25);
+		btnConectar.setBounds(29, 98, 150, 25);
 		contentPane.add(btnConectar);
 		
 		btnIniciar = new JButton("Iniciar");
@@ -167,7 +167,7 @@ public class InterfaceTabuleiro extends JFrame {
 			}
 
 		});
-		btnIniciar.setBounds(29, 138, 114, 25);
+		btnIniciar.setBounds(29, 138, 150, 25);
 		contentPane.add(btnIniciar);
 		
 		JButton btnNewButton = new JButton("Desconectar");
@@ -176,7 +176,7 @@ public class InterfaceTabuleiro extends JFrame {
 				desconectar();
 			}
 		});
-		btnNewButton.setBounds(29, 175, 114, 25);
+		btnNewButton.setBounds(29, 175, 150, 25);
 		contentPane.add(btnNewButton);
 		
 		vPosicao11 = new JLabel();
@@ -1066,6 +1066,15 @@ public class InterfaceTabuleiro extends JFrame {
 		placarJog2[16] = lblNewLabel_33;
 		contentPane.add(lblNewLabel_33);
 		
+		JButton btnIniciarContagem = new JButton("Iniciar Contagem");
+		btnIniciarContagem.setBounds(29, 66, 150, 25);
+		btnIniciarContagem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				iniciarContagem();
+			}
+		});
+		contentPane.add(btnIniciarContagem);
+		
 		
 		
 		
@@ -1171,4 +1180,8 @@ public class InterfaceTabuleiro extends JFrame {
 					placarJog2[(j+1)].setText(pecas[j].toString());
 	}
 }
+	
+	public void iniciarContagem() {
+		this.atorJogador.iniciarContagem();
+	}
 }

@@ -118,4 +118,9 @@ public class AtorJogador {
 		interfaceTabuleiro.atualizarInterfacePlacar(i , pecas);
 		
 	}
+
+	public void iniciarContagem() {
+		tabuleiro.iniciarContagem();
+		
+	}
 }

@@ -252,6 +252,15 @@ public class Tabuleiro {
 							}
 						}
 					} else {
+						if(this.contagemIniciada) {
+							incrementarContagem();
+							this.fim = verificarFimDaContagem();
+						}
+						if(fim) {
+							atorJogador.mostraMensagem("Fim de jogo. Empate.");
+							this.setPartidaEmAndamento(false);
+							this.setPartidaEmpatada(true);
+						} else {
 						this.pecaPrimeiroClick.getPosicao().setOcupado(false);
 						posicoes[i][j].setOcupado(true);
 						posicoes[i][j].setPecaOcupante(this.pecaPrimeiroClick);
@@ -269,6 +278,8 @@ public class Tabuleiro {
 								this.posicaoPrimeiroClick.getLinha(),
 								this.posicaoPrimeiroClick.getColuna(),i,j);
 						
+					}
+					
 					}
 					refinamentoFinalDeJogada(1, this.pecaSegundoClick);
 					this.pecaSegundoClick=null;
@@ -292,12 +303,15 @@ public class Tabuleiro {
 	}
 	
 	public void incrementarContagem() {
-		this.contagem=this.contagem+1;
+		this.contagem++;
 	}
 	
 	
-	//falta implementar
+	
 	public boolean verificarFimDaContagem() {
+		if(this.contagem==this.contagemMaxima) {
+			return true;
+		}
 		return false;
 	}
 	
@@ -327,17 +341,18 @@ public class Tabuleiro {
 		if(cIniciada) {
 			this.incrementarContagem();
 			boolean fim = verificarFimDaContagem();
+			atorJogador.atualizaContagemInterface(this.contagem);
 			if(fim) {
 				this.setPartidaEmAndamento(false);
 				this.setPartidaEmpatada(true);
 				atorJogador.mostraMensagem("Partida empatada");
 			}
+			
 		} else {
 			if(cIniciando) {
-				//int tipo = verificaContagem();
-				//this.setContagemMaxima(50);
-				//this.setContagemIniciada(true);
-				//this.incrementarContagem();
+				this.setContagemMaxima(65);
+				this.setContagemIniciada(true);
+				this.incrementarContagem();
 			}
 		}
 		Peca peca1 = posicoes[i1][j1].getPecaOcupante();
@@ -390,6 +405,33 @@ public class Tabuleiro {
 	
 	public void setPartidaEmpatada(boolean empate) {
 		this.empate=empate;
+	}
+
+	public void iniciarContagem() {
+		boolean daVez = this.jogador1.isJogadorDaVez();
+		if(!daVez) {
+			this.atorJogador.mostraMensagem("Aguarde sua vez para iniciar a contagem");
+		} else {
+			this.setContagemMaxima(65);
+			this.setIniciandoContagem(true);
+			this.setContagemIniciada(true);
+		}
+
+		
+	}
+
+	public void setContagemIniciada(boolean iniciada) {
+		this.contagemIniciada=iniciada;
+		
+	}
+
+	public void setIniciandoContagem(boolean iniciandoContagem) {
+		this.iniciandoContagem=iniciandoContagem;
+		
+	}
+
+	public void setContagemMaxima(int i) {
+		this.contagemMaxima=5;
 	}
 	
 	
