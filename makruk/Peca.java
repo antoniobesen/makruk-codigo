@@ -109,10 +109,12 @@ public class Peca {
 		
 		if(this.tipo==3) {
 			if(this.preta==true) {
-				if(pos.getLinha()==this.posicao.getLinha()+1)
+				if(pos.getLinha()==this.posicao.getLinha()+1 
+						&& (pos.getColuna()==this.posicao.getColuna()+1 || pos.getColuna()==this.posicao.getColuna()-1 || pos.getColuna()==this.posicao.getColuna()))
 					return true;
 			} else {
-				if(pos.getLinha()==this.posicao.getLinha()-1)
+				if(pos.getLinha()==this.posicao.getLinha()-1
+						&& (pos.getColuna()==this.posicao.getColuna()+1 || pos.getColuna()==this.posicao.getColuna()-1 || pos.getColuna()==this.posicao.getColuna()))
 					return true;
 			}
 		}
