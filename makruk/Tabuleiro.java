@@ -175,7 +175,6 @@ public class Tabuleiro {
 	atorJogador.posicionarPecasNaInterface();
 	atorJogador.escondeBotaoIniciarPartida();
 	atorJogador.mostraPlacar(this.jogador1.getNome(), this.jogador2.getNome());
-	atorJogador.mostraMensagem("Você joga em "+posicao);
 
 	}
 
@@ -361,7 +360,6 @@ public class Tabuleiro {
 		boolean cIniciada = jog.isContagemIniciada();
 		
 		if(cIniciada) {
-			atorJogador.mostraMensagem("incrementando");
 			this.incrementarContagem();
 			boolean fim = verificarFimDaContagem();
 			atorJogador.atualizaContagemInterface(this.contagem);
@@ -455,7 +453,7 @@ public class Tabuleiro {
 	}
 
 	public void setContagemMaxima(int i) {
-		this.contagemMaxima=5;
+		this.contagemMaxima=i;
 	}
 	
 	
